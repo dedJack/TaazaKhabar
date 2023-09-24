@@ -81,19 +81,7 @@ export class News extends Component {
       "publishedAt": "2023-09-22T13:00:00Z",
       "content": "Gather round, ye readers, I have a question for you: Are you ready for some football? Worldwide, where football is what Americans call soccer, theres always someone, somewhere ready to answer yes to … [+2695 chars]"
     },
-    {
-      "source": {
-        "id": null,
-        "name": "[Removed]"
-      },
-      "author": null,
-      "title": "[Removed]",
-      "description": "[Removed]",
-      "url": "https://removed.com",
-      "urlToImage": null,
-      "publishedAt": "1970-01-01T00:00:00Z",
-      "content": "[Removed]"
-    },
+    
     {
       "source": {
         "id": "usa-today",
@@ -108,7 +96,8 @@ export class News extends Component {
       "content": "The day's top stories, from sports to movies to politics to world events."
     }
   ]
-
+ 
+  
   constructor(){
     super();
     console.log("I am news constructor.");
@@ -123,16 +112,11 @@ export class News extends Component {
       <div className="container my-3 ">
         <h1><strong>TaazaKhabar - TOP Headlines</strong></h1>
         <div className="row">
-          <div className="col-md-4 my-4">
-            <NewsItem title="Streaming TV Is Entering Its Jock Phase"  description="Like, literally. Everyone, save for maybe Netflix, is clamoring to offer sports as content dries up amid the Hollywood strikes. The latest to enter the scrimmage: (HBO) Max." imageUrl="https://media.wired.com/photos/650cd881f4c0c10b17229943/191:100/w_1280,c_limit/Streaming-Enters-Its-Jock-Era-Culture-1683550892.jpg" newsUrl = "TODO"/>
-          </div>
-          <div className="col-md-4 my-4">
-            <NewsItem title="myTitle" description="myDesc"/>
-          </div>
-          <div className="col-md-4 my-4">
-            <NewsItem title="myTitle" description="myDesc"/>
-          </div>
-          
+          {this.state.articles.map((element) => {
+            return <div className="col-md-4 my-4">
+                      <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : "" } imageUrl={element.urlToImage} newsUrl={element.url}/>
+                    </div>
+          })}
         </div>
       </div>
     )
