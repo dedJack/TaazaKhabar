@@ -11,12 +11,12 @@
      return (
       <div>
         <div>
-          <div className="card " style={{width: "18rem"}}>
+          <div className="card shadow p-3 mb-5 bg-body rounded" style={{width: "18rem"}}>
               <img src={imageUrl} className="card-img-top" alt="Image not available"/>
               <div className="card-body">
                 <h5 className="card-title"><b>{title}</b></h5>
                 <p className="card-text">{description}</p>
-                <a rel="noreferrer" href={newsUrl} target='_blank' className="btn btn-sm btn-primary">Read</a>
+                <a rel="noreferrer" href={newsUrl} target='_blank' className="btn btn-sm btn-dark">Read more</a>
               </div>
           </div>
         </div>
