@@ -12,7 +12,7 @@
       <div>
         <div>
           <div className="card shadow p-3 mb-5 bg-body rounded" style={{width: "18rem"}}>
-              <img src={imageUrl} className="card-img-top" alt="Image not available"/>
+              <img src={imageUrl} className="card-img-top" alt="Img not available"/>
               <div className="card-body">
                 <h5 className="card-title"><b>{title}</b></h5>
                 <p className="card-text">{description}</p>
