@@ -62,6 +62,7 @@ export class News extends Component {
     console.log(parsedData);
     this.setState({articles: parsedData.articles, page: this.state.page - 1});
   }
+  
 
   render() {
     return (
@@ -75,9 +76,11 @@ export class News extends Component {
             return (
               <div className="col-md-4 my-3" key={element.url}>
                 <NewsItem
-                  title={element.title=='[Removed]' ? 'NOT AVAILABLE':  element.title }
+                  title={element.title==='[Removed]' ? 'NOT AVAILABLE':  element.title }
                   description={element.description}
                   imageUrl={element.urlToImage}
+                  publishedAt={element.publishedAt}
+                  source={element.source.name}
                   newsUrl={element.url}
                 />
               </div>
