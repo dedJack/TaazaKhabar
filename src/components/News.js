@@ -18,21 +18,19 @@ const News = (props) =>{
     setLoading(true)
     let data = await fetch(url);
     let parsedData = await data.json();
-    console.log(parsedData);
     setArticles(parsedData.articles);
     setTotalresults(parsedData.totalResults);
     setLoading(false);
   }
 
   useEffect(() => {
-   // eslint-disable-next-line
     updateNews();
+    // eslint-disable-next-line
   } , []);
 
   const fetchMoreData = async () => {
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
     setPage(page+1);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
-    // setLoading(true);
     let data = await fetch(url);
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
@@ -42,7 +40,7 @@ const News = (props) =>{
 
     return (
       <>
-        <h1 className="text-center">
+        <h1 className="text-center" style={{marginTop : "50px"}}>
           <strong /*styles={{display:"block", margin:"0px 50px"}}*/>TaazaKhabar - TOP Headlines</strong>
         </h1>
         {loading && <Spinner/>}
