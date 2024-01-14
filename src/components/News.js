@@ -25,7 +25,7 @@ const News = (props) =>{
   }
 
   useEffect(() => {
-    // eslint-disable-next-line
+   // eslint-disable-next-line
     updateNews();
   } , []);
 
